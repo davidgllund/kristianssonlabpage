@@ -1,0 +1,33 @@
+name: Fetch Google Scholar Publications
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"  # Runs every week at midnight UTC on Sunday
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  fetch-publications:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run Python Script
+        run: python fetch_publications.py
+
+      - name: Commit & Push Updated JSON
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add publications.json
+          git commit -m "Update publications.json" || exit 0
+          git push
