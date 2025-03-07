@@ -345,6 +345,10 @@ input, select, textarea {
 
 		.row > .col-4 {
 			width: 33.33333%;
+			display: flex;
+			flex-direction: column; /* Stack content vertically */
+			align-items: center; /* Center content horizontally */
+			text-align: center; /* Ensure text inside is centered */
 		}
 
 		.row > .off-4 {
