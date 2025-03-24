@@ -1,0 +1,42 @@
+{
+    "erik": {
+        "name": "Erik Kristiansson",
+        "title": "Professor",
+        "bio": "I work with bioinformatics and have several big projects going on. Currently, I have five PhD students and one postdoc. \n Very good in terms of computer."
+    },
+    "anna": {
+        "name": "Anna Johnning",
+        "title": "Researcher",
+        "bio": "I specialize in microbial resistance and genomic analysis. My work focuses on understanding antibiotic resistance mechanisms."
+    },
+    "mikael": {
+        "name": "Mikael Gustavsson",
+        "title": "Researcher",
+        "bio": "My research focuses on computational biology and systems biology approaches to solve biological problems."
+    },
+    "david": {
+        "name": "David Lund",
+        "title": "PhD Student",
+        "bio": "I am working on machine learning applications in bioinformatics and genomics."
+    },
+    "styrbjorn": {
+        "name": "Styrbjörn Käll",
+        "title": "PhD Student",
+        "bio": "My research involves statistical modeling and data analysis in bioinformatics."
+    },
+    "sophia": {
+        "name": "Sophia Axillus",
+        "title": "PhD Student",
+        "bio": "I focus on studying microbial genomics and antibiotic resistance."
+    },
+    "laleh": {
+        "name": "Laleh Varghaei",
+        "title": "PhD Student",
+        "bio": "My research is centered on computational methods for analyzing biological data."
+    },
+    "helga": {
+        "name": "Helga Kristín Ólafsdóttir",
+        "title": "Postdoc",
+        "bio": "I work on developing new computational tools for genomic data analysis."
+    }
+}
