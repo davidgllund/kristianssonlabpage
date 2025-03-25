@@ -1,28 +1,26 @@
-let bios = {};
-
-// Fetch bios from the JSON file
-fetch('bios.json')
-    .then(response => response.json())
-    .then(data => {
-        bios = data;
-    })
-    .catch(error => console.error('Error fetching bios:', error));
-
 function openModal(person) {
     const modal = document.getElementById("modal");
     const modalBody = document.getElementById("modal-body");
-    const personBio = bios[person];
 
-    if (personBio) {
-        modalBody.innerHTML = `
-            <div style="text-align: center;">
-                <img src="images/${person}.PNG" alt="${personBio.name}" style="border-radius: 50%; width: 150px; height: 150px;" />
-                <h3><b>${personBio.name}</b></h3>
-                <p>${personBio.bio}</p>
-            </div>
-        `;
-        modal.style.display = "block";
-    }
+    // Fetch the bios.html file
+    fetch('bios.html')
+        .then(response => response.text())
+        .then(html => {
+            // Create a temporary DOM element to parse the HTML
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = html;
+
+            // Find the bio by ID
+            const personBio = tempDiv.querySelector(`#${person}`);
+            if (personBio) {
+                // Set the modal content to the bio's HTML
+                modalBody.innerHTML = personBio.innerHTML;
+                modal.style.display = "block";
+            } else {
+                console.error(`Bio for ${person} not found.`);
+            }
+        })
+        .catch(error => console.error('Error fetching bios.html:', error));
 }
 
 function closeModal() {
